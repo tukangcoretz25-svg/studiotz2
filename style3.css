@@ -1,0 +1,386 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/* NAVBAR - Tetap Sticky */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 80px; /* Tentukan tinggi navbar yang pasti */
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed; /* Ubah ke fixed agar tidak memotong kalkulasi tinggi */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+/* --- GALLERY / SHOWCASE UPDATED --- */
+.project-showcase {
+    padding: 60px 5%;
+    display: flex;
+    justify-content: center; /* Mengetengahkan secara horizontal */
+    background: #fff;
+}
+
+.gallery-item.featured {
+    width: 100%;
+    max-width: 1000px; /* Batas lebar maksimal agar tidak terlalu raksasa di desktop */
+    aspect-ratio: 16 / 9; /* Memberikan kesan sinematik */
+    border-radius: 15px; /* Opsional: sudut melengkung halus */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Memberikan kedalaman */
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item.featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Info tambahan yang muncul saat hover */
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: #fff;
+    opacity: 0;
+    transition: 0.5s;
+    transform: translateY(20px);
+}
+
+.gallery-item.featured:hover .project-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item.featured:hover img {
+    transform: scale(1.03);
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    .project-showcase {
+        padding: 30px ;
+    }
+    
+    .gallery-item.featured {
+        aspect-ratio: 1 / 1; /* Di HP lebih bagus kotak agar layar penuh */
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+}
+/* CONTAINER UTAMA */
+.container {
+    width: 100%;
+    height: 150%;
+}
+
+.row.full-height {
+    display: flex;
+    flex-wrap: wrap;
+    /* Kalkulasi tinggi: 100% layar dikurangi tinggi navbar */
+    min-height: calc(100vh - 80px); 
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* IMAGE BOX - Menjamin gambar memenuhi kolom */
+.image-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ini kunci agar gambar penuh tanpa distorsi */
+    display: block;
+}
+
+/* TEXT BOX */
+.text-box {
+    padding: 0 10%;
+    justify-content: center; /* Teks akan selalu di tengah vertikal */
+    align-items: flex-start;
+    background-color: #ffffff;
+}
+
+.text-box h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Ukuran lebih besar untuk desktop */
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.text-box p {
+    font-size: 1.2rem;
+    max-width: 500px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .container {
+        margin-top: 75px;
+    }
+    
+    .row.full-height {
+        flex-direction: column;
+        height: auto; /* Biarkan mengalir di mobile */
+    }
+
+    .column {
+        min-width: 100%;
+        height: 50vh; /* Bagi dua layar di mobile */
+    }
+
+    .text-box {
+        padding: 40px 20px;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-logo-img{
+    background: #0c0540;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.nav-logo-img {
+    height: 45px;
+    width: auto;
+}
+
+.nav-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+/* NAVIGATION LINKS */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: blue;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+/* PROJECT CONTAINER */
+.container {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 60vh;
+}
+
+.row.reverse {
+    flex-direction: row-reverse;
+}
+
+.column {
+    flex: 1;
+    min-width: 50%;
+    overflow: hidden;
+}
+
+/* IMAGE BOX */
+.image-box {
+    background: #e0e0e0;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transform: scale(1.1);
+    animation: imageFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes imageFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* TEXT BOX */
+.text-box {
+    padding: 60px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.text-box h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: #111;
+}
+
+.text-box p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn:hover {
+    background-color: blue;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,255,0.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+    .navbar {
+        padding: 15px 25px;
+    }
+
+    /* Menu Hamburger */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #333;
+        transition: 0.3s;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 75px;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.4s;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 30px 0;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .row, .row.reverse {
+        flex-direction: column;
+    }
+
+    .column {
+        min-width: 100%;
+    }
+
+    .text-box {
+        padding: 50px 25px;
+        align-items: center;
+        text-align: center;
+    }
+}

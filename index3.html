@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio TZ | Projects</title>
+    <link rel="stylesheet" href="style3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-area">
+            <img src="logo.PNG" alt="Studio TZ Logo" class="nav-logo-img">
+            <h1 class="nav-title">STUDIO TZ<span style="color: blue">.ID</span></h1>
+        </div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="nav-links" id="navMenu">
+            <a href="index2.html">HOME</a>
+            <a href="#project" class="active">PROJECT BERLANGSUNG</a>
+            <a href="completed.html">COMPLETED</a>
+            <a href="index6.html">ABOUT</a>
+        </nav>
+    </header>
+
+  <main class="viewport-wrapper">
+    <section id="project" class="container">
+        <div class="row full-height">
+            <div class="column image-box">
+                <img src="7.png" alt="Project 1" class="project-img" />
+            </div>
+            <div class="column text-box">
+                <h2>PROYEK SEDANG DIBANGUN</h2>
+                <p>Proyek konstruksi hunian modern yang mengutamakan efisiensi ruang dan estetika minimalis.</p>
+                <a href="index5.html" class="btn">LIHAT PROJECTS</a>
+            </div>
+        </div>
+    </section>
+</main>
+    <script>
+        // Script sederhana untuk toggle menu mobile
+        const menu = document.querySelector('#mobile-menu');
+        const menuLinks = document.querySelector('.nav-links');
+
+        menu.addEventListener('click', function() {
+            menu.classList.toggle('is-active');
+            menuLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

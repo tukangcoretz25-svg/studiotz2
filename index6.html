@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="style6.css" />
+    <title>About | Studio Tukang Coretz</title>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-content">
+            <div class="logo-box">
+                <div class="logo-circle"><img src="logo.PNG" alt="Logo"></div>
+                <h1 class="logo-text">STUDIO TZ <span class="blue-text">.ID</span></h1>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <label for="menu-toggle" class="hamburger-label">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+
+            <nav class="nav-container">
+                <label for="menu-toggle" class="close-btn">&times;</label>
+                <ul class="nav-links">
+                    <li><a href="index2.html">HOME</a></li>
+                    <li><a href="index5.html">PROJECTS</a></li>
+                    <li><a href="completed.html">COMPLETED</a></li>
+                    <li><a href="index6.html" class="active">ABOUT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="section about-hero reveal">
+            <div class="container">
+                <span class="badge">FIRM PROFILE</span>
+                <h2 class="title">Tentang Kami</h2>
+                <div class="text-wrapper">
+                    <p class="lead"><strong>STUDIO TUKANG CORETZ®</strong> adalah firma desain arsitektur dan interior kontemporer yang berfokus pada integrasi harmonis antara kreativitas dan presisi teknis.</p>
+                    <p>Kami percaya bahwa arsitektur adalah tentang menciptakan ekosistem yang menunjang kebahagiaan. Lahir dari kolaborasi arsitek visioner, kami meredefinisi standar hunian modern yang berkelanjutan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-dark reveal">
+            <div class="container">
+                <div class="grid-layout">
+                    <div class="col-info">
+                        <h2 class="title white">Mulai<br>Berdiskusi</h2>
+                        <div class="contact-list">
+                            <div class="item"><span>EMAIL</span><p>tukangcoretz25@gmail.com</p></div>
+                            <div class="item"><span>WHATSAPP</span><p>+62 822-4599-7797</p></div>
+                        </div>
+                    </div>
+
+                    <div class="col-social">
+                        <h3 class="social-label">Follow Us</h3>
+                        <div class="social-grid">
+                            <a href="#" class="social-card wa">
+                                <div class="icon-box"><img src="WA2.png" alt="WA"></div>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="#" class="social-card ig">
+                                <div class="icon-box"><img src="ig2..png" alt="IG"></div>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-card tt">
+                                <div class="icon-box"><img src="tt@.png" alt="TT"></div>
+                                <span>TikTok</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
