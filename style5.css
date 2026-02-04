@@ -1,0 +1,78 @@
+/* --- BASE STYLES --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background: #fff; color: #333; overflow-x: hidden; }
+
+/* --- NAVBAR --- */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%; background: #fff; position: sticky; top: 0; z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+.logo-box { display: flex; align-items: center; gap: 12px; }
+.nav-logo { height: 35px; width: auto; }
+.logo-text { font-size: 1.1rem; letter-spacing: 2px; font-weight: 700; color: #333; }
+.blue-text { color: #0000FF; }
+
+/* --- HAMBURGER MENU --- */
+.menu-checkbox { display: none; }
+.hamburger-label { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+.bar { width: 25px; height: 2px; background: #333; transition: 0.3s; }
+
+/* NAV CONTAINER (MOBILE SLIDE-IN) */
+.nav-container {
+    position: fixed; top: 0; right: -100%; width: 100%; height: 100%;
+    background: #fff; z-index: 2000; transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    padding: 40px;
+}
+.menu-checkbox:checked ~ .nav-container { right: 0; }
+
+.menu-header { display: flex; justify-content: flex-end; margin-bottom: 50px; }
+.close-btn { font-size: 40px; cursor: pointer; color: #333; font-weight: 200; }
+
+.nav-links { list-style: none; }
+.nav-links li { margin-bottom: 25px; }
+.nav-links a {
+    text-decoration: none; font-size: 1.5rem; font-weight: 700; color: #999;
+    letter-spacing: 1px; transition: 0.3s;
+}
+.nav-links a.active, .nav-links a:hover { color: #0000FF; }
+
+/* --- HERO VIDEO --- */
+.hero-video { position: relative; width: 100%; height: 50vh; overflow: hidden; }
+.main-video {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    min-width: 100%; min-height: 100%; object-fit: cover;
+}
+.hero-overlay {
+    position: absolute; inset: 0; background: rgba(10, 10, 10, 0.365); /* Efek terang sesuai gambar */
+    display: flex; justify-content: center; align-items: center; text-align: center;
+    padding: 20px; z-index: 2;
+}
+.hero-title { font-size: 2.2rem; letter-spacing: 4px; color: #1a2a4e; font-weight: 600; }
+.hero-subtitle { font-size: 0.9rem; color: #888; margin-top: 10px; font-style: italic; }
+
+.social-icons { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
+.social-icons img { width: 30px; height: 30px; opacity: 0.8; }
+
+/* --- GALLERY --- */
+.gallery-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 20px 5%;
+}
+.gallery-item { aspect-ratio: 1/1; overflow: hidden; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* --- DESKTOP VIEW --- */
+@media (min-width: 1024px) {
+    .nav-container { 
+        position: static; width: auto; height: auto; background: none; padding: 0; 
+    }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { font-size: 13px; color: #666; font-weight: 600; }
+    .hamburger-label, .menu-header { display: none; }
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+    .hero-video { height: 70vh; }
+}
+.nav-logo{
+    background: #0c0540;
+}
